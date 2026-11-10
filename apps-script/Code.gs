@@ -50,9 +50,11 @@ function createCheerForm() {
 
   // 1) 사본에 딸려 온 빈 응답 탭(설문이 연결되지 않은 탭)을 정리
   ss.getSheets().forEach(function (sh) {
-    if (sh.getName().indexOf('설문지 응답') === 0 && !sh.getFormUrl() && sh.getLastRow() <= 1) {
-      ss.deleteSheet(sh);
-    }
+    if (sh.getName().indexOf('설문지 응답') !== 0 || sh.getFormUrl()) return;
+    var rows = Math.max(sh.getMaxRows() - 1, 1);
+    var stamps = sh.getRange(2, 1, rows, 1).getValues();
+    var empty = stamps.every(function (r) { return r[0] === '' || r[0] === null; });
+    if (empty) ss.deleteSheet(sh);
   });
 
   // 2) 설문 만들기
