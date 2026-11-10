@@ -5,6 +5,7 @@
 - 예시 페이지: https://dossamlab.github.io/suneung-cheer-kit/
 - 사용설명서(1쪽): https://dossamlab.github.io/suneung-cheer-kit/guide.html · [PDF](guide.pdf)
 - 설정 만들기: https://dossamlab.github.io/suneung-cheer-kit/make.html
+- 직접 만들어 보기(프롬프트 가이드): https://dossamlab.github.io/suneung-cheer-kit/prompt-guide.html
 
 ## 만드는 순서
 
